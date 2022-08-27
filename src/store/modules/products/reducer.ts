@@ -26,6 +26,6 @@ const CartData = createSlice({
 
 export const { addNewItem } = CartData.actions;
 
-export const cartStateData = (state: ICartState) => state.cart.cart;
+export const productState = (state: ICartState) => state.cart.cart;
 
 export default CartData.reducer;

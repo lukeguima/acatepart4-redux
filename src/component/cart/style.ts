@@ -4,13 +4,18 @@ import {
 
 export default StyleSheet.create({
   container: {
-    marginTop: 14,
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
     marginRight: 40,
     paddingVertical: 20
+  },
+  modalBody: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   contentCart: {
     backgroundColor: '#000540',

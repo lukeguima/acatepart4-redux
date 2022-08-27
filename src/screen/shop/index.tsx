@@ -8,6 +8,16 @@ import {
 
 import { StatusBar } from 'expo-status-bar';
 
+import {
+  useDispatch
+} from 'react-redux';
+
+
+import { 
+  addNewItem 
+} from '../../store/modules/cart/reducer';
+
+
 import Cart from '../../component/cart'
 
 import styles from './style';
@@ -17,7 +27,20 @@ import 'intl/locale-data/jsonp/pt-BR'
 
 import { products } from '../../constants'
 
+import {
+  IProduct
+} from '../../types/index'
+
+
 const Shop = () => {
+
+  const dispatch = useDispatch();
+
+  const addCartItemShop = (item: IProduct) => {
+    console.log(item);
+    dispatch(addNewItem(item));
+  }
+
   return (
     <View
       style={styles.container}
@@ -60,12 +83,11 @@ const Shop = () => {
               </Text>
               <Pressable
                 style={styles.buttonAddCart}
-                onPress={() => alert('Adicionado')}
+                onPress={() => addCartItemShop(item)}
               >
                 <Text
                   style={styles.addCart}
                 >Adicionar Carrinho</Text>
-
               </Pressable>
             </View>
 
